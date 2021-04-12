@@ -1,0 +1,12 @@
+oxyshop_sylius_comgate_plugin.form:
+    secret:
+        not_blank: Zadejte prosím tajný klíč
+        not_regex: Zadejte prosím tajný klíč v délce {{ length }} znaků
+    merchant:
+        not_blank: Zadejte prosím identifikátor propojení obchodu
+        not_regex: Zadejte prosím identifikátor propojení obchodu ve správném tvaru ({{ length }} číslic)
+    email:
+        not_blank: Zadejte prosím email ve správném tvaru
+        not_email: Zadejte prosím email ve správném tvaru
+    method:
+        not_blank: Vyberte prosím platební metodu

@@ -1,0 +1,54 @@
+services:
+    _defaults:
+        autowire: false
+        autoconfigure: false
+        public: false
+
+    # Notify Controller
+    Oxyshop\Nextgen\Plugin\SyliusComgatePlugin\Controller\NotifyController:
+        public: true
+        # tags: ['controller.service_arguments']
+        arguments:
+            - '@payum'
+            - '@sylius.repository.payment'
+
+    # List of available payments
+    oxyshop_sylius_comgate_plugin.data.payment_method_provider:
+        class: Oxyshop\Nextgen\Plugin\SyliusComgatePlugin\Data\PaymentMethodsProvider
+
+    # Add new payment method type to admin
+    oxyshop_sylius_comgate_plugin.form.type.gateway_configuration.comgate:
+        class: Oxyshop\Nextgen\Plugin\SyliusComgatePlugin\Form\Type\ComgateGatewayConfigurationType
+        arguments:
+            $paymentMethodsProvider: '@oxyshop_sylius_comgate_plugin.data.payment_method_provider'
+        tags:
+            -   name: sylius.gateway_configuration_type
+                type: comgate
+                label: oxyshop_sylius_comgate_plugin.name
+            -   name: form.type
+
+    # Register gateway factory
+    oxyshop_sylius_comgate_plugin.gateway_factory:
+        class: Payum\Core\Bridge\Symfony\Builder\GatewayFactoryBuilder
+        arguments:
+            $gatewayFactoryClass: Oxyshop\Nextgen\Plugin\SyliusComgatePlugin\ComgateGatewayFactory
+        tags:
+            -   name: payum.gateway_factory_builder
+                factory: comgate
+
+    # Register payment actions
+    oxyshop_sylius_comgate_plugin.action.capture:
+        class: Oxyshop\Nextgen\Plugin\SyliusComgatePlugin\Action\CaptureAction
+        public: true
+        tags:
+            -   name: payum.action
+                factory: comgate
+                alias: payum.action.capture
+
+    oxyshop_sylius_comgate_plugin.action.status:
+        class: Oxyshop\Nextgen\Plugin\SyliusComgatePlugin\Action\StatusAction
+        public: true
+        tags:
+            -   name: payum.action
+                factory: comgate
+                alias: payum.action.status

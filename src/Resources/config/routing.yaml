@@ -1,0 +1,11 @@
+oxyshop_sylius_comgate_plugin_notify_action:
+    path: /payment/comgate/notify
+    methods: ['POST']
+    defaults:
+        _controller: OxyshopSyliusComgatePlugin:Notify:notify
+
+oxyshop_sylius_comgate_plugin_redirect_action:
+    path: /payment/comgate/redirect
+    methods: ['POST', 'GET']
+    defaults:
+        _controller: OxyshopSyliusComgatePlugin:Notify:redirect

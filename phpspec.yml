@@ -1,0 +1,4 @@
+suites:
+    main:
+        namespace: Oxyshop\Nextgen\Plugin\SyliusComgatePlugin
+        psr4_prefix: Oxyshop\Nextgen\Plugin\SyliusComgatePlugin

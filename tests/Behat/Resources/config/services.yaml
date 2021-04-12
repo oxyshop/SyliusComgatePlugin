@@ -1,0 +1,16 @@
+services:
+    oxyshop.sylius_comgate_plugin.behat.page.admin.payment_method.create_page:
+        class: Tests\Oxyshop\Nextgen\Plugin\SyliusComgatePlugin\Behat\Page\Admin\PaymentMethod\CreatePage
+        parent: 'sylius.behat.page.admin.payment_method.create'
+
+    oxyshop.sylius_comgate_plugin.behat.page.admin.payment_method.update_page:
+        class: Tests\Oxyshop\Nextgen\Plugin\SyliusComgatePlugin\Behat\Page\Admin\PaymentMethod\UpdatePage
+        parent: 'sylius.behat.page.admin.payment_method.update'
+
+    oxyshop.sylius_comgate_plugin.behat.context.ui.admin.managing_payment_methods_context:
+        public: true
+        class: Tests\Oxyshop\Nextgen\Plugin\SyliusComgatePlugin\Behat\Context\Ui\Admin\ManagingPaymentMethodsContext
+        arguments:
+            - '@oxyshop.sylius_comgate_plugin.behat.page.admin.payment_method.create_page'
+            - '@oxyshop.sylius_comgate_plugin.behat.page.admin.payment_method.update_page'
+            - '@sylius.behat.current_page_resolver'

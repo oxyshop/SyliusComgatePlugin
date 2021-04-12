@@ -1,0 +1,2 @@
+oxyshop_sylius_comgate_plugin:
+    resource: '@OxyshopSyliusComgatePlugin/Resources/config/routing.yaml'

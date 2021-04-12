@@ -1,0 +1,35 @@
+oxyshop_sylius_comgate_plugin:
+    name: Comgate
+    form:
+        secret: Secret key
+        merchant: Merchant ID
+        method: Payment method
+        method_placeholder: Selected accepted method
+        test: Test
+        email: Email
+        methods:
+            all: All
+            all_cards: Credit cards
+            all_banks: Express payment transfers
+            bank_airbank_transfer: Express payment transfers - Air Bank
+            bank_csob_transfer: Express payment transfers - ČSOB
+            bank_equa_transfer: Express payment transfers - Equa bank
+            bank_other_transfer: Express payment transfers - ostatní
+            bank_rb_button: Raiffeisenbank
+            bank_kb_button: Komereční banka
+            bank_moneta_button: MONETA Money Bank
+            bank_sberbank_button: Sberbank
+            bank_fio_button: Fio banka
+            bank_ceskasporitelna_button: Česká spořitelna
+            bank_mbank_button: mBank
+            bank_csob_button: ČSOB
+            bank_era_button: ERA
+            bank_unicredit_button: UniCredit Bank
+            bank_prima_sk_transfer: Prima banka (SK)
+            bank_fio_sk_transfer: Fio banka (SK)
+            bank_other_sk_transfer: Ostatní převody (SK)
+            bank_slovenskasporitelna_sk_button: Slovenská spořitelna (SK)
+            bank_vub_sk_button: VÚB (SK)
+            bank_tatra_sk_button: Tatra banka (SK)
+            bank_csob_sk_button: ČSOB (SK)
+            bank_postovna_sk_button: Poštovná banka (SK)

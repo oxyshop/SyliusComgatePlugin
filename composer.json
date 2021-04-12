@@ -1,0 +1,42 @@
+{
+    "name": "oxyshop/sylius-comgate-plugin",
+    "description": "Integration of Comgate as Sylius payment method",
+    "keywords": ["comgate", "payment", "sylius", "plugin"],
+    "type": "symfony-bundle",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "oXy Online s.r.o.",
+            "homepage": "https://www.oxyshop.cz"
+        }
+    ],
+    "require": {
+        "php": "^7.3",
+        "contributte/comgate": "dev-master",
+        "sylius/sylius": "^1.8.5"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "phpspec/phpspec": "^6.0",
+        "roave/security-advisories": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "Oxyshop\\Nextgen\\Plugin\\SyliusComgatePlugin\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "spec\\Oxyshop\\Nextgen\\Plugin\\SyliusComgatePlugin\\": "spec/",
+            "Tests\\Oxyshop\\Nextgen\\Plugin\\SyliusComgatePlugin\\Behat\\": "tests/Behat"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.5-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}

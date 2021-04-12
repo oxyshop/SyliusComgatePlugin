@@ -1,0 +1,12 @@
+oxyshop_sylius_comgate_plugin.form:
+    secret:
+        not_blank: Secret key is required
+        not_regex: Secret key must be {{ length }} characters long
+    merchant:
+        not_blank: Merchant ID is required
+        not_regex: Merchant ID must be {{ length }} digits long
+    email:
+        not_blank: Please enter the correct email
+        not_email: Please enter the correct email
+    method:
+        not_blank: Please selectn the paymetn method
